@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	#mydiv
+	{
+		width:100%;
+		min-height:250px;
+		border:2px solid black;
+		font-size: 2em;
+		background-color: azure;
+	}
+	.bold 
+	{
+		font-weight: bold;
+	}
+	.italic 
+	{
+		font-style: italic;
+	}
+	.underline 
+	{
+		text-decoration: underline;
+	}
+</style>
+</head>
+
+<body>
+	<h1>example of DOM methods</h1> <hr/>
+	<table>
+		<tr>
+			<td>
+			<input type="button" class="btn" name="btnbold" value="B" />
+			<input type="button" class="btn" name="btnitalic" value="i" />
+			<input type="button" class="btn" name="btnunderline" value="u" />
+			<input type="button" class="btn" name="btnclear" value="clear" />
+			</td>
+			
+		</tr>
+	
+	</table>
+	<div id="mydiv">
+		The Easylearn Academy<br/>
+		php android java iphone python<br/>
+		116 eva surbhi, opp aksharwadi, bhavnagar
+	</div>
+<script src="jquery.js" language="javascript" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){
+		
+		$("input[name='btnbold']").click(function(){
+			$(this).toggleClass("bold");
+			$("#mydiv").toggleClass("bold");
+		});
+		
+		
+		$("input[name='btnitalic']").click(function(){
+			$(this).toggleClass("italic");
+			$("#mydiv").toggleClass("italic");
+		});
+		
+		$("input[name='btnunderline']").click(function(){
+			$(this).toggleClass("underline");
+			$("#mydiv").toggleClass("underline");
+		});
+		
+		$("input[name='btnclear']").click(function(){
+			$(".btn").removeClass("bold italic underline");
+			$("#mydiv").removeClass("bold italic underline");
+		});
+		
+	});
+</script> 
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	#mydiv
+	{
+		width:100%;
+		height:250px;
+		border:2px solid black;
+		font-size: 2em;
+		background-color: azure;
+	}
+</style>
+</head>
+
+<body>
+	<h1>example of DOM methods</h1> <hr/>
+	<table>
+		<tr>
+			<td width="60%">
+				Enter some text <br/>
+				<textarea name="txtcontent"></textarea>
+			</td>
+			<td>
+				<input type="button" name="btntext" value="Add Content as Text" />
+ 			</td>
+			<td><input type="button" name="btnhtml" value="Add Content with Text & HTML" /></td>
+			<td><input type="button" name="btnclear" value="Clear all" /></td>
+		</tr>
+	</table>
+	<div id="mydiv">
+		
+	</div>
+<script src="jquery.js" language="javascript" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){
+		
+		$("input[name='btntext']").click(function(){
+			var content = $("textarea[name='txtcontent']").val(); //it returns text from input tag
+			var oldcontent = $("#mydiv").text();
+			$("#mydiv").text(oldcontent + " " + content);
+		});
+		
+		
+		$("input[name='btnhtml']").click(function(){
+			var content = $("textarea[name='txtcontent']").val(); //it returns text from input tag
+			var oldcontent = $("#mydiv").html();
+			$("#mydiv").html(oldcontent + " " + content);
+		});
+		
+		$("input[name='btnclear']").click(function(){
+			$("textarea[name='txtcontent']").val(""); //it set the text into input tag
+			$("#mydiv").html("");
+			
+		});
+		
+		
+	});
+</script> 
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	#mydiv
+	{
+		width:100%;
+		min-height:250px;
+		border:2px solid black;
+	}
+	p 
+	{
+		font-size: 2em;
+		background-color: azure;
+		padding:5px;
+		margin-bottom: 10px;
+	}
+</style>
+</head>
+
+<body>
+	<h1>example of DOM methods</h1> <hr/>
+	<table>
+		<tr>
+			<td width="60%">
+				Enter some text <br/>
+				<textarea id="txtcontent"></textarea>
+			</td>
+			<td>
+				<input type="button" class="btn" name="btnappend" value="Append Text (insert At the End)" />
+ 			</td>
+			<td><input type="button" class="btn" name="btnprepend" value="Add Text (insert at the begining)" /></td>
+			<td><input type="button" class="btn" name="btnafter" value="Add After (insert after the tag)" /></td>
+			<td><input type="button" class="btn" name="btnbefore" value="Add Before (insert before the tag)" /></td>
+			
+		</tr>
+		<tr>
+			<td><input type="button" class="btn" name="btnempty" value="Empty Div Tag" /></td>
+			<td><input type="button"  class="btn" name="btndelete" value="remove whole Div Tag" /></td>
+			<td><input type="button" value="i will not disabled" /></td>
+		</tr>
+	</table>
+	<div id="mydiv">
+		<p>The Easylearn Academy</p>
+		<p>php android java iphone python</p>
+		<p>116 eva surbhi, opp aksharwadi, bhavnagar</p>
+	</div>
+<script src="jquery.js" language="javascript" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){
+		
+		$("input[name='btnappend']").click(function(){
+		
+			$("#mydiv").append(getText());
+		});
+		
+		
+		$("input[name='btnprepend']").click(function(){
+			$("#mydiv").prepend(getText());
+		});
+		
+		$("input[name='btnafter']").click(function(){
+			
+			$("#mydiv").after(getText());
+		});
+		
+		$("input[name='btnbefore']").click(function(){
+			$("#mydiv").before(getText());	
+		});
+		
+		$("input[name='btnempty']").click(function(){
+			$("#mydiv").empty();	
+		});
+		
+		$("input[name='btndelete']").click(function(){
+			$("#mydiv").remove();	
+			$(".btn").attr("disabled",true);
+		});
+		
+		
+		function getText()
+		{
+			var FormattedText =  "<p>" + $("#txtcontent").val() + "</p>";
+			return FormattedText;
+		}
+	});
+</script> 
+</body>
+</html>

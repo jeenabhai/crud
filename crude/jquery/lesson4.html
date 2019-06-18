@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	.mydiv 
+	{
+		border:1px solid black;
+		display:block;
+		height:170px;
+		background-color: antiquewhite;
+		font-size: 2em;
+		vertical-align:middle;
+		text-align: center;
+	}
+	
+	td 
+	{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+<table width="100%" border="1">
+	<tr>
+		<Td><input type="button" id="btnfadein" value="Fade In" /></Td>
+		<Td><input type="button" id="btnfadeout" value="Fade Out" /></Td>
+		<Td><input type="button" id="btnfadetoggle" value="Fade Toggle" /></Td>
+		<Td><input type="button" id="btnfadeto" value="Fade To" /></Td>
+	</tr>
+</table>
+<hr/>
+<div class="mydiv" id="first">
+		The Easylearn academy
+</div>
+<div class="mydiv" id="second">
+		Android, PHP, Python, IOS
+</div>
+<div class="mydiv" id="third">
+		116, Eva surbhi, Opp Aksharwadi, Waghawadi road, Bhavnagar
+</div>
+
+<script src="jquery.js" language="javascript" type="text/javascript"></script>
+<script>
+		$(document).ready(function(){
+			$("#btnfadein").click(function(){
+				$("#first").fadeIn();
+				$("#second").fadeIn("slow");
+				$("#third").fadeIn(3000,function(){
+					alert("fadeing effect finished");
+				});
+			});
+			
+			$("#btnfadeout").click(function(){
+				$("#first").fadeOut();
+				$("#second").fadeOut("slow");
+				$("#third").fadeOut(3000,function(){
+					alert("fadeOut effect finished");
+				});
+			});
+			
+			$("#btnfadetoggle").click(function(){
+				$("#first").fadeToggle();
+				$("#second").fadeToggle("slow");
+				$("#third").fadeToggle(3000,function(){
+					alert("fadeToggle effect finished");
+				});
+				
+			});
+			
+			$("#btnfadeto").click(function(){
+				$("#first").fadeTo("slow",0.50);
+				$("#second").fadeTo("fast",0.50);
+				$("#third").fadeTo(3000,"0.50",function(){
+					alert("fadeTo effect finished");
+				});
+			});
+		});
+</script>
+</body>
+</html>
+
+
+
+
+
+

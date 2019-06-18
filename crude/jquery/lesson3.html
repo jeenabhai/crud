@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	.mydiv 
+	{
+		border:1px solid black;
+		display:block;
+		height:170px;
+		background-color: antiquewhite;
+		font-size: 2em;
+		vertical-align:middle;
+		text-align: center;
+	}
+	
+	td 
+	{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+<table width="100%" border="1">
+	<tr>
+		<Td><input type="button" id="btnshow" value="Show" /></Td>
+		<Td><input type="button" id="btnhide" value="Hide" /></Td>
+		<Td><input type="button" id="btntoggle" value="Show/Hide" /></Td>
+	</tr>
+</table>
+<hr/>
+<div class="mydiv" id="first">
+		The Easylearn academy
+</div>
+<div class="mydiv" id="second">
+		Android, PHP, Python, IOS
+</div>
+<div class="mydiv" id="third">
+		116, Eva surbhi, Opp Aksharwadi, Waghawadi road, Bhavnagar
+</div>
+
+<script src="jquery.js" language="javascript" type="text/javascript"></script>
+<script>
+		$(document).ready(function(){
+			$("#btnhide").click(function(){
+				$("#first").hide();
+				$("#second").hide("slow");
+				$("#third").hide(3000,function(){
+					alert("this completion of hide method.");
+				});
+			});
+			
+			$("#btnshow").click(function(){
+				$("#first").show();
+				$("#second").show("slow");
+				$("#third").show(3000,function(){
+					alert("this completion of show method.");
+				});
+			});
+			
+			$("#btntoggle").click(function(){
+				$(".mydiv").toggle("slow");
+				
+			});
+		});
+</script>
+</body>
+</html>
+
+
+
+
+
+

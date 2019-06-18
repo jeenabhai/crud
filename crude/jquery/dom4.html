@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	div
+	{
+		height: 300px;
+		width: 300px;
+		padding: 10px;
+		border:3px solid red;
+		margin:10px;
+	}
+</style>
+</head>
+
+<body>
+<div id="mydiv">
+	The Easylearn Academy
+</div>
+<script src="jquery.js" language="javascript" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){
+		    var height,width,innerheight,innerwidth,outerheight,outerwidth,fullheight,fullwidth;
+			var docheight,docwidth;
+			height = $("#mydiv").height();
+			width = $("#mydiv").width();
+		
+			docheight = $(document).height();
+			docwidth = $(document).width();
+		
+		    innerheight = $("#mydiv").innerHeight(); //height + padding 320
+		    innerwidth = $("#mydiv").innerWidth(); //width + padding 320
+		    outerwidth = $("#mydiv").outerWidth(); //width + padding + border 326
+		    outerheight = $("#mydiv").outerHeight(); //width + padding 320
+		    fullheight = $("#mydiv").outerHeight(true); //width + padding + border + margin  346
+		    fullwidth = $("#mydiv").outerWidth(true); //width + padding   + border + margin346
+		    var dimension = "height =" + height + " width = " + width + "<br/> innerheight = " + innerheight + " innerwidth = " + innerwidth + "<br/> outerheight = " + outerheight + " outerwidth = " + outerwidth + "<br/> fullwidth =" + fullwidth + " fullheight = " + fullheight + "<br/> document height = " + docheight + " docwidth =" + docwidth;
+			$("#mydiv").html(dimension);
+		
+		
+	});
+</script>
+</body>
+</html>

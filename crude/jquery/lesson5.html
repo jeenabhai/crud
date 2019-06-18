@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	.mydiv 
+	{
+		border:1px solid black;
+		display:block;
+		height:170px;
+		background-color: antiquewhite;
+		font-size: 2em;
+		vertical-align:middle;
+		text-align: center;
+	}
+	
+	td 
+	{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+<table width="100%" border="1">
+	<tr>
+		<Td><input type="button" id="btnslideup" value="Slide Up" /></Td>
+		<Td><input type="button" id="btnslidedown" value="Slide Down" /></Td>
+		<Td><input type="button" id="btnslidetoggle" value="Slide Toggle" /></Td>
+	</tr>
+</table>
+<hr/>
+<div class="mydiv" id="first">
+		The Easylearn academy
+</div>
+<div class="mydiv" id="second">
+		Android, PHP, Python, IOS
+</div>
+<div class="mydiv" id="third">
+		116, Eva surbhi, Opp Aksharwadi, Waghawadi road, Bhavnagar
+</div>
+
+<script src="jquery.js" language="javascript" type="text/javascript"></script>
+<script>
+		$(document).ready(function(){
+			$("#btnslideup").click(function(){
+				$("#first").slideUp();
+				$("#second").slideUp("slow");
+				$("#third").slideUp(3000,function(){
+					alert("SlideUp method is called");
+				});
+			});
+			
+			$("#btnslidedown").click(function(){
+				$("#first").slideDown();
+				$("#second").slideDown("slow");
+				$("#third").slideDown(3000,function(){
+					alert("slideDown method is called");
+				});
+			});
+			
+			$("#btnslidetoggle").click(function(){
+				$("#first").slideToggle();
+				$("#second").slideToggle("slow");
+				$("#third").slideToggle(3000,function(){
+					alert("slideToggle method is called");
+				});
+				
+			});
+			
+		});
+</script>
+</body>
+</html>
+
+
+
+
+
+
